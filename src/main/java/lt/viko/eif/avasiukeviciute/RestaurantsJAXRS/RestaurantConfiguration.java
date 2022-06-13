@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class RestaurantConfiguration extends ResourceConfig {
-
     public RestaurantConfiguration(){
 
         register(RestaurantController.class);

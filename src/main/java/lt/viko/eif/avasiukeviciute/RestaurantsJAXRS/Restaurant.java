@@ -8,9 +8,8 @@ import java.io.Serializable;
 
 /**
  * Restaurant class has its attributes and methods
- * @Get gets all set parameters
- * @Set sets all the parameters
  * @XmlAttribute is specified on a Record-part field and identifies characteristics of an XML attribute
+ * @Autor Agne Vasiukeviciute PI20S
  */
 @XmlAccessorType(XmlAccessType.NONE)
 @XmlRootElement(name = "restaurant")
@@ -44,74 +43,153 @@ public class Restaurant implements Serializable {
     @XmlAttribute(name="signatureDish")
     private String signatureDish;
 
+    /**
+     * Returns Id
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
+
+    /**
+     * Gets Restaurant Name
+     * @return
+     */
 
     public String getRestaurantName() {
         return restaurantName;
     }
 
+    /**
+     * Sets Restaurant Name
+     * @param restaurantName
+     */
+
     public void setRestaurantName(String restaurantName) {
         this.restaurantName = restaurantName;
     }
+
+    /**
+     * Gets city
+     * @return
+     */
 
     public String getCity() {
         return city;
     }
 
+    /**
+     * Sets City name
+     * @param city
+     */
+
     public void setCity(String city) {
         this.city = city;
     }
+
+    /**
+     * Gets Address
+     * @return
+     */
 
     public String getAddress() {
         return address;
     }
 
+    /**
+     * Sets Address
+     * @param address
+     */
+
     public void setAddress(String address) {
         this.address = address;
     }
+
+    /**
+     * Returns Email address
+     * @return
+     */
 
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Sets Email
+     * @param email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Gets Number
+     * @return
+     */
     public int getNumber() {
         return number;
     }
 
+    /**
+     * Sets numbers
+     * @param number
+     */
     public void setNumber(int number) {
         this.number = number;
     }
 
+    /**
+     * Gets Restaurant Category
+     * @return
+     */
     public String getRestaurantCategory() {
         return restaurantCategory;
     }
 
+    /**
+     * Sets Restaurant Category
+     * @param restaurantCategory
+     */
     public void setRestaurantCategory(String restaurantCategory) {
         this.restaurantCategory = restaurantCategory;
     }
 
+    /**
+     * Get Signature Dish
+     * @return
+     */
     public String getSignatureDish() {
         return signatureDish;
     }
 
+    /**
+     * Sets Signature Dish
+     * @param signatureDish
+     */
     public void setSignatureDish(String signatureDish) {
         this.signatureDish = signatureDish;
     }
 
+    /**
+     * Gets Uri
+     * @return
+     */
     public String getUri() {
         return uri;
     }
 
+    /**
+     * Sets Uri /retsurants/1
+     * @param uri
+     */
     public void setUri(String uri) {
         this.uri = uri;
     }

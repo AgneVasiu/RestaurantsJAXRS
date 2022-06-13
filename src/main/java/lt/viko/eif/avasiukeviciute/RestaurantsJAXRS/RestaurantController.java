@@ -15,6 +15,11 @@ import java.util.Map;
 /**
  * RestaurantController has all the methods for getting date from http requests and ads
  * the correct data to the local json database.
+ * @Path sets application endpoint
+ * @Get gets requests form postman, soap ui .... and sends list of restaurants or one restaurant data by id
+ * @Post gets requests form postman, soap ui .... and adds the parameters that it got to local database
+ * @Put gets requests form postman, soap ui and updates one specified restaurant information by id
+ * @Delete gets requests form postman, soap ui and deletes restaurant information by id
  */
 @XmlAccessorType(XmlAccessType.NONE)
 @XmlRootElement(name = "restaurants")
@@ -23,6 +28,10 @@ public class RestaurantController {
 
     private static Map<Integer, Restaurant> DB = new HashMap<>();
 
+    /**
+     * Gets and exports all restaurants
+     * @return
+     */
     @GET
     @Produces("application/json")
     public Restaurants getAllRestaurants() {
@@ -31,6 +40,12 @@ public class RestaurantController {
         return restaurants;
     }
 
+    /**
+     * Resives information and ads to virtual database.
+     * @param restaurant
+     * @return
+     * @throws URISyntaxException
+     */
     @POST
     @Consumes("application/json")
     public Response createRestaurant(Restaurant restaurant) throws URISyntaxException {
@@ -44,6 +59,12 @@ public class RestaurantController {
         return Response.status(201).contentLocation(new URI(restaurant.getUri())).build();
     }
 
+    /**
+     * Gets and exports restaurants information by id
+     * @param id
+     * @return
+     * @throws URISyntaxException
+     */
     @GET
     @Path("/{id}")
     @Produces("application/json")
@@ -59,6 +80,13 @@ public class RestaurantController {
                 .contentLocation(new URI("/restaurant/"+id)).build();
     }
 
+    /**
+     * Updates information of restaurant by id
+     * @param id
+     * @param restaurant
+     * @return
+     * @throws URISyntaxException
+     */
     @PUT
     @Path("/{id}")
     @Consumes("application/json")
@@ -80,6 +108,12 @@ public class RestaurantController {
         return Response.status(200).entity(temp).build();
     }
 
+    /**
+     * Deletes information of restaurant by Id
+     * @param id
+     * @return
+     * @throws URISyntaxException
+     */
     @DELETE
     @Path("/{id}")
     public Response deleteRestaurant(@PathParam("id") int id) throws URISyntaxException {
